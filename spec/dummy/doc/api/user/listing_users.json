@@ -1,0 +1,51 @@
+{
+  "resource": "User",
+  "http_method": "GET",
+  "route": "/users",
+  "description": "Listing users",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": false,
+      "scope": "from",
+      "name": "name",
+      "description": "Name of the last record on the previous page"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/users?from[name]=b",
+      "request_body": null,
+      "request_headers": {
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "from": {
+          "name": "b"
+        }
+      },
+      "request_content_type": null,
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\"users\":[{\"id\":1,\"name\":\"Howard\",\"email\":\"123@hotmail.com\",\"created_at\":\"2015-03-26T03:10:46.245Z\",\"updated_at\":\"2015-03-26T03:10:46.245Z\"}],\"meta\":{\"deleted_ids\":[],\"pagination\":{\"total_objects\":1}}}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"49cd8c35cbb33ac874d5ade4b4d64866\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "1b53273a-ef5a-4d91-af60-18cb93dc18d6",
+        "X-Runtime": "0.076859",
+        "Content-Length": "201"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

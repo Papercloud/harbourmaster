@@ -1,0 +1,45 @@
+{
+  "resource": "User",
+  "http_method": "PUT",
+  "route": "/users/:id",
+  "description": "Updating a specific user",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "/users/1",
+      "request_body": "user[id]=1&user[name]=Howard&user[email]=123%40hotmail.com&user[updated_at]=2015-03-26T03%3A10%3A46.413Z",
+      "request_headers": {
+        "Host": "example.org",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/x-www-form-urlencoded",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\"user\":{\"id\":1,\"name\":\"Howard\",\"email\":\"123@hotmail.com\",\"created_at\":\"2015-03-26T03:10:46.413Z\",\"updated_at\":\"2015-03-26T03:10:46.413Z\"},\"meta\":{\"deleted_ids\":[],\"pagination\":{\"total_objects\":null}}}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Location": "http://example.org/users/1",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"c9801d90932ecd3562da377bb80f1110\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "1a62e404-bc49-41eb-a0cd-280bcdfa7feb",
+        "X-Runtime": "0.024366",
+        "Content-Length": "201"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

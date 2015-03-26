@@ -9,7 +9,6 @@ resource "<%= name.camelize %>" do
   <%- if options["actions"].include? "index" -%>
   # get INDEX docs
   get "/<%= plural_name -%>" do
-    parameter :name, "Name of the last record on the previous page", required: false, scope: :from
 
     example "Listing <%= plural_name -%>" do
       do_request
@@ -17,6 +16,7 @@ resource "<%= name.camelize %>" do
       expect(status).to eq 200
     end
 
+    parameter :name, "Name of the last record on the previous page", required: false, scope: :from
     let(:name) { "b" }
     example "Listing <%= plural_name -%> from the letter B (pagination)" do
       explanation "This uses the paginative gem for pagination by showing only the records after the record you pass in."

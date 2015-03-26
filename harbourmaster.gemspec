@@ -8,10 +8,10 @@ Gem::Specification.new do |s|
   s.name        = "harbourmaster"
   s.version     = Harbourmaster::VERSION
   s.authors     = ["Isaac Norman"]
-  s.email       = ["isaacdnorman@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Harbourmaster."
-  s.description = "TODO: Description of Harbourmaster."
+  s.email       = ["idn@papercloud.com.au"]
+  s.homepage    = "https://github.com/Papercloud/Harbourmaster"
+  s.summary     = "Take control of your doc(k)s"
+  s.description = "Rails generator for making documented API controllers"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]

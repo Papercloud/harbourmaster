@@ -1,0 +1,39 @@
+{
+  "resources": [
+    {
+      "name": "User",
+      "examples": [
+        {
+          "description": "Creating a user",
+          "link": "user/creating_a_user.json",
+          "groups": "all"
+        },
+        {
+          "description": "Deleting a specific user",
+          "link": "user/deleting_a_specific_user.json",
+          "groups": "all"
+        },
+        {
+          "description": "Get a specific user",
+          "link": "user/get_a_specific_user.json",
+          "groups": "all"
+        },
+        {
+          "description": "Listing users",
+          "link": "user/listing_users.json",
+          "groups": "all"
+        },
+        {
+          "description": "Listing users from the letter B (pagination)",
+          "link": "user/listing_users_from_the_letter_b_(pagination).json",
+          "groups": "all"
+        },
+        {
+          "description": "Updating a specific user",
+          "link": "user/updating_a_specific_user.json",
+          "groups": "all"
+        }
+      ]
+    }
+  ]
+}
