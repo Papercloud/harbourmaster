@@ -2,8 +2,8 @@ module Harbourmaster
   class ControllerGenerator < Rails::Generators::NamedBase
     desc 'Used to create a documented API controller'
     argument :api_base_route, type: :string, default: "app/controllers/api"
-    class_option :permit_params, type: :boolean
-    class_option :actions, type: :array, aliases: '-a'
+    class_option :permit_params, type: :boolean, desc: "When included will generate a permitted_params method in the controller"
+    class_option :actions, type: :array, aliases: '-a', desc: "List of controller actions to generate"
     source_root File.expand_path('../templates', __FILE__)\
 
     def create_controller_file

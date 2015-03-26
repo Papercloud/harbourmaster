@@ -6,11 +6,8 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
 require "sprockets/railtie"
-require "rspec"
-require "rspec_api_documentation"
-require "active_model_serializers"
-require "inherited_resources"
-require "apitome"
+require "ragamuffins"
+require "paginative"
 # require "rails/test_unit/railtie"
 
 Bundler.require(*Rails.groups)

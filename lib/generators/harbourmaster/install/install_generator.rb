@@ -8,6 +8,10 @@ module Harbourmaster
       copy_file 'base_api_controller.rb', 'app/controllers/base_api_controller.rb'
     end
 
+    def initializer_responder
+      template 'json_responder.rb', 'lib/responders/json_responder.rb'
+    end
+
     def initialize_active_model_serializers
       copy_file 'active_model_serializer.rb', 'config/initializers/active_model_serializer.rb'
     end

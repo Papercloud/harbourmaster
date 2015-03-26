@@ -43,15 +43,9 @@ resource "<%= name.camelize %>" do
   # post CREATE docs
   post "/<%= plural_name -%>" do
     example "Creating a <%= name.underscore %>" do
-      do_request(@<%= name.underscore -%>.attributes.except("id", "created_at").as_json)
+      do_request(<%= name.underscore %>: @<%= name.underscore -%>.attributes.except("id", "created_at").as_json)
 
       expect(status).to eq 201
-    end
-
-    example "Creating a <%= name.underscore %> - errors" do
-      do_request
-
-      expect(status).to eq 422
     end
   end
   <%- end -%>
@@ -61,7 +55,7 @@ resource "<%= name.camelize %>" do
     let(:id) { @<%= name.underscore -%>.id }
 
     example "Updating a specific <%= name.underscore -%>" do
-      do_request
+      do_request(<%= name.underscore %>: @<%= name.underscore -%>.attributes.except("created_at").as_json)
 
       expect(status).to eq 200
     end

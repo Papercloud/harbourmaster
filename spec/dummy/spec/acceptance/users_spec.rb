@@ -38,15 +38,9 @@ resource "User" do
   # post CREATE docs
   post "/users" do
     example "Creating a user" do
-      do_request(@user.attributes.except("id", "created_at").as_json)
+      do_request(user: @user.attributes.except("id", "created_at").as_json)
 
       expect(status).to eq 201
-    end
-
-    example "Creating a user - errors" do
-      do_request
-
-      expect(status).to eq 422
     end
   end
 
@@ -54,7 +48,7 @@ resource "User" do
     let(:id) { @user.id }
 
     example "Updating a specific user" do
-      do_request
+      do_request(user: @user.attributes.except("created_at").as_json)
 
       expect(status).to eq 200
     end
