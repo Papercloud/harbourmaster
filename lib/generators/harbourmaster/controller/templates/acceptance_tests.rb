@@ -8,7 +8,7 @@ resource "<%= name.camelize %>" do
 
   <%- if options["actions"].include? "index" -%>
   # get INDEX docs
-  get "/<%= api_base_route -%>/<%= plural_name -%>" do
+  get "<%= api_base_route.gsub('app/controllers', '') -%>/<%= plural_name -%>" do
 
     example "Listing <%= plural_name -%>" do
       do_request
@@ -28,7 +28,7 @@ resource "<%= name.camelize %>" do
 
   <%- if options["actions"].include? "show" -%>
   # get SHOW docs
-  get "/<%= api_base_route -%>/<%= plural_name -%>/:id" do
+  get "<%= api_base_route.gsub('app/controllers', '') -%>/<%= plural_name -%>/:id" do
     let(:id) { @<%= name.underscore -%>.id }
 
     example "Get a specific <%= name.underscore %>" do
@@ -41,7 +41,7 @@ resource "<%= name.camelize %>" do
 
   <%- if options["actions"].include? "create" -%>
   # post CREATE docs
-  post "/<%= api_base_route -%>/<%= plural_name -%>" do
+  post "<%= api_base_route.gsub('app/controllers', '') -%>/<%= plural_name -%>" do
     example "Creating a <%= name.underscore %>" do
       do_request(<%= name.underscore %>: @<%= name.underscore -%>.attributes.except("id", "created_at").as_json)
 
@@ -51,7 +51,7 @@ resource "<%= name.camelize %>" do
   <%- end -%>
 
   <%- if options["actions"].include? "update" -%>
-  put "/<%= api_base_route -%>/<%= plural_name -%>/:id" do
+  put "<%= api_base_route.gsub('app/controllers', '') -%>/<%= plural_name -%>/:id" do
     let(:id) { @<%= name.underscore -%>.id }
 
     example "Updating a specific <%= name.underscore -%>" do
@@ -63,7 +63,7 @@ resource "<%= name.camelize %>" do
   <%- end -%>
 
   <%- if options["actions"].include? "destroy" -%>
-  delete "/<%= api_base_route -%>/<%= plural_name %>/:id" do
+  delete "<%= api_base_route.gsub('app/controllers', '') -%>/<%= plural_name %>/:id" do
     let(:id) { @<%= name.underscore %>.id }
 
     example "Deleting a specific <%= name.underscore %>" do
