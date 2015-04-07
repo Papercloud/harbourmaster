@@ -3,6 +3,7 @@ module Harbourmaster
     desc 'Used to create a documented API controller'
     argument :api_base_route, type: :string, default: "app/controllers/api"
     class_option :permit_params, type: :boolean, desc: "When included will generate a permitted_params method in the controller"
+    class_option :skip_tests, type: :boolean, desc: "Skip generating the acceptance tests used for generating documentation"
     class_option :actions, type: :array, aliases: '-a', desc: "List of controller actions to generate"
     source_root File.expand_path('../templates', __FILE__)\
 
@@ -11,6 +12,7 @@ module Harbourmaster
     end
 
     def create_acceptance_tests
+      return if options['skip_tests']
       template 'acceptance_tests.rb', "spec/acceptance/#{plural_name}_spec.rb" if options['actions']
     end
 

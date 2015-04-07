@@ -68,7 +68,9 @@ The `[API BASE ROUTE]` defaults to `"app/controllers/api"`. This is the folder w
 
 `-a` allows you to pass in actions that you want generated in the controller, as an example `-a index show` will generate a controller with the `index` and `show` actions already made
 
-`--permit-params` will generate a hash of permitted params in the controller
+`--permit_params` will generate a hash of permitted params in the controller
+
+`--skip_tests` will skip the generation of the acceptance tests used for generating the documentation
 
 ### Example
 
