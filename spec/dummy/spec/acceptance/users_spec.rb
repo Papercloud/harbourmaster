@@ -7,8 +7,7 @@ resource "User" do
   end
 
   # get INDEX docs
-  get "/users" do
-    parameter :name, "Name of the last record on the previous page", required: false, scope: :from
+  get "/app/controllers/api/v1/users" do
 
     example "Listing users" do
       do_request
@@ -16,6 +15,7 @@ resource "User" do
       expect(status).to eq 200
     end
 
+    parameter :name, "Name of the last record on the previous page", required: false, scope: :from
     let(:name) { "b" }
     example "Listing users from the letter B (pagination)" do
       explanation "This uses the paginative gem for pagination by showing only the records after the record you pass in."
@@ -25,7 +25,7 @@ resource "User" do
   end
 
   # get SHOW docs
-  get "/users/:id" do
+  get "/app/controllers/api/v1/users/:id" do
     let(:id) { @user.id }
 
     example "Get a specific user" do
@@ -35,32 +35,6 @@ resource "User" do
     end
   end
 
-  # post CREATE docs
-  post "/users" do
-    example "Creating a user" do
-      do_request(user: @user.attributes.except("id", "created_at").as_json)
 
-      expect(status).to eq 201
-    end
-  end
 
-  put "/users/:id" do
-    let(:id) { @user.id }
-
-    example "Updating a specific user" do
-      do_request(user: @user.attributes.except("created_at").as_json)
-
-      expect(status).to eq 200
-    end
-  end
-
-  delete "/users/:id" do
-    let(:id) { @user.id }
-
-    example "Deleting a specific user" do
-      do_request
-
-      expect(status).to eq 204
-    end
-  end
 end

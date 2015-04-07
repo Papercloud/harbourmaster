@@ -1,4 +1,5 @@
-class <%= plural_name.camelize %>Controller < BaseApiController
+
+class <%= ("#{api_base_route}/#{plural_name}Controller".split('/') - ['app', 'controllers']).map(&:camelize).join("::") %> < BaseApiController
   <%= "actions :#{options['actions'].join(', :') }" if options['actions'].present? -%>
 
 <% if options['permit_params'] -%>
