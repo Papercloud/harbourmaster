@@ -7,7 +7,7 @@ resource "User" do
   end
 
   # get INDEX docs
-  get "/app/controllers/api/v1/users" do
+  get "/api/v1/users" do
 
     example "Listing users" do
       do_request
@@ -25,7 +25,7 @@ resource "User" do
   end
 
   # get SHOW docs
-  get "/app/controllers/api/v1/users/:id" do
+  get "/api/v1/users/:id" do
     let(:id) { @user.id }
 
     example "Get a specific user" do
