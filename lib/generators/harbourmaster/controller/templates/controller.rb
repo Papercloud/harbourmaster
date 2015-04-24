@@ -1,4 +1,9 @@
 class <%= ("#{api_base_route}/#{plural_name}".split('/') - ['app', 'controllers']).map(&:camelize).join("::") -%>Controller < BaseApiController
+  <% if options['authentication'] -%>
+<%= "before_action :authenticate_user!" if options['authentication'] == 'devise' -%>
+<%= "acts_as_token_authentication_handler_for User" if options['authentication'] == 'token' -%>
+  <% end -%>
+
   <%= "actions :#{options['actions'].join(', :') }" if options['actions'].present? -%>
 
 <% if options['permit_params'] -%>
