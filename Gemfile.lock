@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    harbourmaster (0.2.1)
+    harbourmaster (0.2.2)
       active_model_serializers (~> 0.9.3)
       apitome (~> 0.0.8)
       factory_girl_rails

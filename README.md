@@ -64,13 +64,21 @@ This generates:
 
 The `[API BASE ROUTE]` defaults to `"app/controllers/api"`. This is the folder where your controller will be generated
 
-**Other options**
+### Optional Controller Arguments
 
 `-a` allows you to pass in actions that you want generated in the controller, as an example `-a index show` will generate a controller with the `index` and `show` actions already made
 
-`--permit_params` will generate a hash of permitted params in the controller
+`--permit-params` will generate a hash of permitted params in the controller
 
-`--skip_tests` will skip the generation of the acceptance tests used for generating the documentation
+`--skip-tests` will skip the generation of the acceptance tests used for generating the documentation
+
+`--skip-controller` will skip generation of the controller itself
+
+`--skip-serializer` will skip the generation of a serializer for the resource
+
+`-auth` allows you to specify if the controller should be behind an authentication method. Harbourmaster currently supports [Devise](https://github.com/plataformatec/devise) and [Simple Token Authentication](https://github.com/gonzalo-bulnes/simple_token_authentication). These are simply passed in as strings ('devise' or 'token').
+
+**NOTE:** Harbourmaster assumes that your authentication is handled on a `User` model. You may need to update the method in the generated controller if your model is named otherwise.
 
 ### Example
 
