@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency "inherited_resources", '~> 1.6.0'
   s.add_dependency "responders", "~> 2.1.0"
   s.add_dependency "ragamuffins", "~> 1.0.5"
-  s.add_dependency "paginative", "~> 0.0.18"
+  s.add_dependency "paginative", "<= 0.3.0"
   s.add_dependency "ransack", "~> 1.6.4"
   s.add_dependency "apitome", "~> 0.0.8"
   s.add_dependency "factory_girl_rails"
