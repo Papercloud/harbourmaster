@@ -23,5 +23,19 @@ module Harbourmaster
     def initialize_apitome
       generate "apitome:install"
     end
+
+    def use_factory_girl_syntax
+      # Remove these two lines if they're already there
+      gsub_file 'spec/rails_helper.rb', /^\s\# Use FactoryGirl shortcuts/, ""
+      gsub_file 'spec/rails_helper.rb', /\s*config.include FactoryGirl::Syntax::Methods\s*/, ""
+      # Then add them so we know that they are there
+      inject_into_file 'spec/rails_helper.rb', after: /RSpec.configure do\s*.*\n/ do
+        <<-RUBY
+  # Use FactoryGirl shortcuts
+  config.include FactoryGirl::Syntax::Methods
+
+        RUBY
+      end
+    end
   end
 end
