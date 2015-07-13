@@ -16,8 +16,8 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
-  s.add_dependency "rails", ">= 4.0.0", "<= 4.3.0"
-  s.add_dependency "rspec-rails", "~> 3.2.1"
+  s.add_dependency "rails", ">= 4.0.0", "<= 5.0.0"
+  s.add_dependency "rspec-rails"
   s.add_dependency "active_model_serializers", "~> 0.9.3"
   s.add_dependency "rspec_api_documentation", "4.3.0"
   s.add_dependency "inherited_resources", '~> 1.6.0'
